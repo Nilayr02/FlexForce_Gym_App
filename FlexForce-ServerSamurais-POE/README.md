@@ -1,0 +1,197 @@
+# 🏋️ FlexForce – Gym Application and Fitness Tracker
+
+_PLEASE NOTE THIS IS THE FINAL AND COMPLETE REPO_
+
+**FlexForce** is a comprehensive fitness application designed to offer a customized training experience that assists users in achieving their fitness goals. From personalized routines to progress tracking and workout challenges, FlexForce makes training engaging and effective.
+
+## 🎥 Video Showcase - https://www.youtube.com/watch?v=k4q42bwOanA
+
+## 👥 Members
+* **Aidan Keith Naidoo** - ST10109482
+* **David Roy Mellors** - ST10241466
+* **Nilay Ramjee** - ST10082679
+* **Dylan Miller** - ST10029256
+
+## 📱 App Details
+* **App Name**: FlexForce
+* **App Type**: Gym Application / Fitness Tracker
+
+## 🎯 Purpose
+FlexForce aims to provide an accessible and user-friendly fitness tracking solution to support a healthy lifestyle. Users can create custom training routines, track their progress, and participate in workout challenges. Predefined workouts are also available for quick access.
+
+## 🚀 Key Innovative Features
+* **Filter Exercises by Muscle Group Anatomy**: Select body parts on an interactive anatomy figure to find targeted exercises.
+* **Workout Streaks and High Score**: Keeps users motivated by rewarding consistent progress.
+* **Workout Challenges**: Join challenges to push fitness limits.
+* **Google Login**: Login with Google for convenience.
+* **Weight Tracker**: Track weight, body fat percentage, and BMI for insights into the fitness journey.
+
+## 📦 Release Notes
+
+### New Features
+1. **Google Login**: Seamless login with Google.
+2. **Weight Tracker**: Track weight, body fat %, and BMI.
+
+### Updates
+* **Single Sign-On** and **Biometric Authentication** for secure logins.
+* **Settings** page for personal customization.
+* **Offline Mode**: Save workouts and settings offline.
+* **Real-time Notifications** to keep users engaged.
+* **Multi-language Support**: Choose from English, Afrikaans, or Zulu.
+
+## 🎨 Design Considerations
+FlexForce's design was influenced by a review of top fitness apps, with a focus on combining their best features into a visually appealing and easy-to-use interface for enhanced user engagement.
+
+## 🎨 Colour Palette
+* **Primary Colour**: #1B1C1E
+* **Secondary Colour**: #FFFFFF
+* **Background Colour**: #303030
+* **Text Colour**: #FFFFFF
+
+## 📱 Screens Overview
+1. **Welcome Screen**: Introduction to the app with options to register or log in.
+2. **Registration Screen**: Create a new account.
+3. **Login Screen**: Login with credentials.
+4. **Home Screen**: View workout streaks, weight, favorite exercises, and set fitness goals.
+5. **Settings Page**: Customize profile and app settings.
+6. **Workout Screen**: Browse exercises by category.
+7. **Create Workout Screen**: Design custom workout routines.
+8. **Challenges Screen**: Access and join fitness challenges.
+9. **Statistics Screen**: Track fitness progress, streaks, and BMI.
+
+## 🗺️ Application Navigation
+FlexForce utilizes a bottom navigation bar for seamless access to profile, workouts, statistics, challenges, and settings.
+
+## 📡 API Design
+The REST API facilitates data flow between the Android app and Firebase:
+* **Endpoints**: Synchronization, user data, and exercise retrieval.
+* **Tech Stack**: Built with Node.js and Express, hosted on Vercel.
+* **Methods**: Includes GET, POST, and DELETE.
+
+### Key API Functions
+* **Workout Retrieval**: Fetch workouts based on type.
+* **Preset Workouts**: Access predefined workouts based on user preferences.
+
+## 🔄 GitHub and GitHub Actions
+The FlexForce project leverages GitHub for version control and GitHub Actions for CI/CD:
+* **Automated Testing**: Each push triggers unit tests.
+* **Automated Build**: Builds APK and AAB files for distribution.
+* **Artifact Upload**: APK and AAB files are stored as GitHub artifacts.
+* **Triggers**: Actions run on each push to `master` or `release/**`.
+
+## 🔔 Real-time Notifications Setup
+FlexForce uses Firebase Cloud Messaging (FCM) to provide real-time notifications:
+
+1. **Open Firebase Console**:
+   * Navigate to **Cloud Messaging** in Firebase Console and create a new notification.
+
+2. **Enter Notification Details**:
+   * Define the title and body, configure targeting, and set scheduling options.
+
+3. **Retrieve FCM Token**:
+   * Obtain the FCM token from the Android Studio logs to target specific devices.
+
+4. **Implement Firebase Messaging Service**:
+   * Create `FirebaseMessagingService.kt` in Android Studio, extending `FirebaseMessagingService`.
+   * Use `onMessageReceived` to display the notification with content specified in Firebase.
+
+5. **Test Notification Delivery**:
+   * Use the **Test on device** feature in Firebase Console, pasting the FCM token to deliver the notification to the target device.
+
+6. **Verify Notification**:
+   * Confirm the notification appears on the device with the correct title and body.
+---
+ 
+ ## 🔐 Setting up Fingerprint Authentication in FlexForce
+
+Follow these steps to enable and set up fingerprint authentication in FlexForce:
+
+### Step 1: Device Prerequisites
+
+1. **Check Device Compatibility**:
+   - Ensure your Android device has a fingerprint sensor and runs Android 6.0 or higher.
+   - Register at least one fingerprint in the device settings under **Settings > Security > Fingerprint** (or **Biometrics**).
+
+### Step 2: Enable Fingerprint Authentication in FlexForce
+
+1. **Open FlexForce and Log In**:
+   - Launch FlexForce and log in with your email and password.
+
+2. **Enable Fingerprint in Settings**:
+   - Go to the **Settings** page and enable **Fingerprint Authentication** for future logins.
+
+### Step 3: Test Fingerprint Authentication
+
+1. **Attempt Login with Fingerprint**:
+   - Ensure a fingerprint is registered on the device, then try logging in with fingerprint authentication.
+
+2. **Handle Errors**:
+   - For issues like fingerprint not recognized or authentication errors, ensure permissions are granted, and the device’s fingerprint sensor is clean and functional.
+
+### Troubleshooting
+
+- **Re-enable Fingerprint if Removed**: If a user removes their fingerprint from the device, FlexForce may prompt them to re-enable fingerprint authentication.
+- **Sensor and Permission Issues**: Confirm permissions for biometrics are enabled in the app’s device settings.
+
+---
+
+These steps provide a straightforward guide for setting up and using fingerprint authentication in FlexForce.
+
+## 🏃 Getting Started
+1. Clone the repository from GitHub: 
+git clone  https://github.com/Server-Samurai-s/FlexForce.git
+2. Open the project in Android studio
+3. Build and run the project on an Android device or emulator. 
+API repository: git clone https://github.com/davidrmellors/flexforce-api.git
+
+## ⚙️ **Continuous Integration with GitHub Actions**
+
+**GitHub Actions** is used in this project to automate testing and building processes. It ensures that each code push is tested and the app is built correctly across environments, reducing manual work and enhancing consistency.
+
+**Automated Testing**: Every push to the `master` or `release/**` branches triggers automated unit tests using Gradle (`./gradlew test`). This ensures that the main functionality of the app is verified with every code update.
+
+**Automated Build**: After successful testing, the workflow automatically builds APK and AAB files (`./gradlew assembleDebug` and `./gradlew bundleRelease`). These files are used for distribution and testing.
+
+**Artefact Upload**: The APK and AAB files are uploaded as artefacts, making them available for download directly from GitHub.
+
+**Triggers**: The workflow is automatically triggered on every push to `master` or `release/**` branches, ensuring continuous integration and consistent validation of code changes.
+
+## 🧪 Technologies Used
+1. Firebase: Cloud firestore is used for storing user workouts and data.
+2. Vercel: Used to host the API.
+3. Node.js and Express: Used to build a custom REST API that connects to firebase. 
+4. Android Development: Developed using Kotlin programming language for Android platform compatibility.
+5. Database: RoomDB for offline mode.
+
+## 👾 PlayStore Publication
+![PlayStore](./PublishedApp.png)
+
+Here’s the addition of the AI usage write-up at the end of your README:
+
+---
+
+## 🤖 AI Tools Usage and Citation
+
+During the completion of this assessment, AI tools played a supportive role in enhancing productivity, debugging code, and clarifying technical details. OpenAI’s ChatGPT was used for several key purposes throughout the project, helping the team achieve their objectives with precision and efficiency.
+
+### Code Assistance and Generation
+   - **Code Examples**: ChatGPT was utilized to generate examples of Git commands and workflows for managing repositories, which were beneficial when organizing our project on GitHub. For instance, the AI provided detailed steps for setting up remote repositories and maintaining synchronized forks, enabling each team member to display the project on their personal GitHub profiles.
+   - **Debugging Code**: The AI was instrumental in troubleshooting coding errors. When certain functions weren’t executing as expected, such as a Google Sign-In intent in our Android app, ChatGPT helped diagnose potential issues. It suggested methods to verify button bindings, isolate lifecycle dependencies, and add debug logging, which guided us in identifying the underlying issues.
+
+### Project Documentation and Best Practices
+   - **Best Practices for Git Workflows**: ChatGPT provided insights into collaborative Git workflows, such as adding upstream remotes and handling merges, which were directly applied to our project. This ensured our team followed industry-standard practices for version control and repository management.
+   - **Writeup and Explanations**: ChatGPT assisted in drafting explanations for certain project components, making it easier to communicate our methodology and choices effectively. For example, it offered a clear structure for describing our GitHub organization setup, which helped align our project structure with the requirements set by our lecturer.
+
+### AI as a Teaching Tool
+   - Throughout the assessment, ChatGPT also acted as an educational resource, providing contextual explanations for unfamiliar coding concepts or error messages. For example, when we encountered issues related to Android’s view binding, ChatGPT provided explanations on how to inspect and resolve binding inconsistencies. This not only helped solve immediate problems but also deepened our understanding of Android development.
+
+### Conclusion
+ChatGPT was acknowledged within our team as a valuable resource, enhancing our project’s efficiency and accuracy. By acting as a coding assistant, debugging aid, and knowledge source, ChatGPT enabled us to complete our tasks more effectively while adhering to project requirements and best practices. All instances of AI support were carefully reviewed and adapted to align with our project’s unique needs, ensuring that we maintained a high standard of work.
+
+---
+ 
+## 📚 Reference / Bibliography
+· GeeksforGeeks. 2024. How to send different types of requests (GET, POST, PUT, DELETE) in Postman, 1 January 2024. [Online]. Available at: https://www.geeksforgeeks.org/how-to-send-different-types-of-requests-get-post-put-delete-in-postman/ [Accessed 23 September 2024].
+
+## 📜 License
+This project is licensed under the MIT License. See the LICENSE file for more information.
